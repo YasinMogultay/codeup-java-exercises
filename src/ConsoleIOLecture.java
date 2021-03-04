@@ -1,4 +1,4 @@
-
+import java.util.Scanner;
 
 public class ConsoleIOLecture {
 
@@ -68,6 +68,16 @@ public class ConsoleIOLecture {
 //            System.out.println(lastName);
 //            System.out.println(what);
 
+        /* TODO: use the scanner to take in the name of the month you were born and print it back out
+            - remember to first prompt the user for the input
+         */
+
+//        Scanner sc = new Scanner(System.in);
+//        System.out.println("Enter your month you were born");
+//        String strr = ("You born in:");
+//        String monthBorn = sc.next(); //.next for string .nextInt for Integers
+//        System.out.printf("%s %s", strr, monthBorn);
+
         // .nextInt() captures the first valid int value:
 //            System.out.print("Please enter your age: ");
 //            int age = sc.nextInt();
@@ -77,6 +87,21 @@ public class ConsoleIOLecture {
 //            System.out.print("Favorite quote: ");
 //            String quote = sc.nextLine();
 //            System.out.println(quote);
+
+        /* TODO: use the scanner to take in your birthday as an integer and then name of the month you were born and print it back out
+            - remember to first prompt the user for the birthday day of the month and store as an integer
+            - next take in name of the month with .nextLine()
+            - print out the result
+            - use a fix to prevent the month name input from being skipped
+         */
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter your birthday of the day");
+        Integer myBd = sc.nextInt();
+        System.out.print("Enter your name of the month");
+        sc.next(); // .nextInt() acepts input as inthe same line we should have another sc.next() to fix it
+        String myMo = sc.nextLine();
+        System.out.printf("Your birthday is %s %s", myBd, myMo);
 
         // Quirk of using next() then nextLine()...
         // https://stackoverflow.com/questions/13102045/scanner-is-skipping-nextline-after-using-next-or-nextfoo
