@@ -49,7 +49,8 @@ public class HelloWorld {
 //        x /= y;
 //        y -= x;
 
-
+        byte numo = Byte.MAX_VALUE; //when you try to assign larger than variable it will throw error
+        System.out.println(numo + 2);
 
 
 

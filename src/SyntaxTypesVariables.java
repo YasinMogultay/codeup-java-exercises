@@ -74,8 +74,7 @@ public class SyntaxTypesVariables {
 
         //command b for search class
 
-        byte numo = Byte.MAX_VALUE; //when you try to assign larger than variable it will throw error
-        System.out.println(numo + 2);
+
     }
 
 }
