@@ -9,16 +9,16 @@ public class SyntaxTypesVariables {
 //        System.out.println(((Object)shoort).getClass().getName());
 //
         int myInt = 2147483647;
-            System.out.println(((Object)myInt).getClass().getName());
+//            System.out.println(((Object)myInt).getClass().getName());
 //
 //        long loong = 2000000000;
 //        System.out.println(((Object)loong).getClass().getName());
 
         int minValue = Integer.MIN_VALUE;
-        System.out.println(minValue - 1);
+//        System.out.println(minValue - 1);
 
         int maxValue = Integer.MAX_VALUE;
-        System.out.println(maxValue + (maxValue + 3));
+//        System.out.println(maxValue + (maxValue + 3));
 
 
         // FLOAT
@@ -32,7 +32,7 @@ public class SyntaxTypesVariables {
         //Boolean
 
         boolean isTrue = ((1 < 2) && (1 > 0));
-        System.out.println(isTrue);
+//        System.out.println(isTrue);
 
         //Char
 
@@ -40,16 +40,16 @@ public class SyntaxTypesVariables {
         char letter2 = 'b';
 
                 var output = letter + letter2;
-        System.out.println(output);
+//        System.out.println(output);
 
-        System.out.println(((Object)output).getClass().getName());
+//        System.out.println(((Object)output).getClass().getName());
 
         // String
         String myString = "String";
-        System.out.println(myString.length());
+//        System.out.println(myString.length());
 
         String myStr = "This is my first line \nthis my new \t line"; // \n is new line \t giving tab space
-        System.out.println(myStr);
+//        System.out.println(myStr);
 
         //Variables
 
@@ -61,7 +61,7 @@ public class SyntaxTypesVariables {
         }else{
             num = 2;
         }
-        System.out.println(num);
+//        System.out.println(num);
 
         //Constants
 
@@ -74,6 +74,8 @@ public class SyntaxTypesVariables {
 
         //command b for search class
 
+        byte numo = Byte.MAX_VALUE; //when you try to assign larger than variable it will throw error
+        System.out.println(numo + 2);
     }
 
 }
