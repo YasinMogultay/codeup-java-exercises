@@ -8,13 +8,12 @@ public class Bob {
         System.out.println("Ask a question to Bob");
         Scanner sc = new Scanner(System.in);
         String questionToBob = sc.nextLine();
-        String lastChar = questionToBob.substring(questionToBob.length() - 1);
         System.out.println();
-        if (lastChar.equals("?")){
+        if (questionToBob.endsWith("?")){
             System.out.println("Sure.");
-        } else if (lastChar.equals("!")){
+        } else if (questionToBob.endsWith("!")){
             System.out.println("Whoa, chill out");
-        } else if (questionToBob.equals(" ")){
+        } else if (questionToBob.equals("")){
             System.out.println("Fine. Be that way!");
         } else {
             System.out.println("Whatever.");
