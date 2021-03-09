@@ -295,7 +295,5 @@ return count;
     }
 
 
-    //Methods exercise 5 ===================
-
 
 }
