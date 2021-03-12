@@ -16,12 +16,21 @@ public class ArraysExercises {
             System.out.println(people[i].getName());
         }
 
-        addPerson(people, new Person("Yasin"));
+//        addPerson(people, new Person("Carlos"));
+        people = addPerson(people, new Person("Tom"));
+
+        for (int i = 0; i < people.length; i++){
+            System.out.println(people[i].getName());
+        }
     }
 
-    public static Person[] addPerson(Person[] people, Person[] person){
-        Person[] newPerson = Arrays.copyOf(person, person.length + 1);
-        return newPerson;
+    public static Person[] addPerson(Person[] people, Person person) {
+        int newArrLength = people.length + 1;
+
+        Person[] newArr = Arrays.copyOf(people, newArrLength);
+        newArr[people.length] = person;
+
+        return newArr;
     }
 
 

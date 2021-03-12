@@ -7,12 +7,6 @@ public class Person {
         this.name = name;
     }
 
-    public Person(String name1, String name2, String name3) {
-        this.name = name1;
-        this.name = name2;
-        this.name = name3;
-    }
-
     public String getName(){
         return this.name;
     }
