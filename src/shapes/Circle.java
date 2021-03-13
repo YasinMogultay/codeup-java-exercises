@@ -1,6 +1,7 @@
 package shapes;
 
 public class Circle {
+
     //private radius property
     private double radius;
 

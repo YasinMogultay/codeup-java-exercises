@@ -16,7 +16,7 @@ public class ArraysExercises {
             System.out.println(people[i].getName());
         }
 
-//        addPerson(people, new Person("Carlos"));
+
         people = addPerson(people, new Person("Tom"));
 
         for (int i = 0; i < people.length; i++){
@@ -32,7 +32,5 @@ public class ArraysExercises {
 
         return newArr;
     }
-
-
 
 }
