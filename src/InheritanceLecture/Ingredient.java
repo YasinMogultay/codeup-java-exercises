@@ -23,7 +23,7 @@ package InheritanceLecture;
         public void setSugarFree(boolean sugarFree) {
             isSugarFree = sugarFree;
         }
-        public static void throwAway (){
-            System.out.println("Throwing away ingredient...");
+        public void throwAway (){
+            System.out.println("Throwing away ingredient...!");
         }
     }

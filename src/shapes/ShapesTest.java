@@ -6,7 +6,7 @@ public class ShapesTest {
         System.out.println(box1.getArea());
         System.out.println(box1.getPerimeter());
 
-        Square box2 = new Square(5);
+        Rectangle box2 = new Square(5);
         System.out.println(box2.getArea());
         System.out.println(box2.getPerimeter());
     }

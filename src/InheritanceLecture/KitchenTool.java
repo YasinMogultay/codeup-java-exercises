@@ -21,7 +21,7 @@ public class KitchenTool {
         this.brandName = brandName;
     }
     public static void throwAway (){
-        System.out.println("Throwing away ingredient...");
+        System.out.println("Throwing away ..." + brandName);
     }
 
 }
