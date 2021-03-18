@@ -33,7 +33,7 @@ public class CollectionsLecture {
         // info about list and getting elements
 
 //        System.out.println(numbers.size());
-//        System.out.println(numbers.indexOf(3));
+//        System.out.println(numbers.indexOf(2));
 //        System.out.println(numbers);
 //        System.out.println(numbers.indexOf(105));
 //

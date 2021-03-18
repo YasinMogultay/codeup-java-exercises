@@ -1,50 +1,73 @@
 package movies;
 
+import util.Input;
+
 import java.util.Scanner;
 
 public class MoviesApplication {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
+        boolean running = true;
+        while (running) {
+            System.out.println(returnMenuDisplay());
+            int response = promptUserForChoice();
+            running = executeUserChoice(response);
+        }
+    }
+
+    private static boolean executeUserChoice(int choice) {
+        boolean continueRunningApp = true;
+        switch (choice) {
+            case 0:
+                System.out.println("exit");
+                continueRunningApp = false;
+                break;
+            case 1:
+                for (Movie movie : MoviesArray.findAll()) {
+                    System.out.println(movie.getName() + " -- " + movie.getCategory());
+                }
+                break;
+            case 2:
+                viewMoviesByCategory("animated");
+                break;
+            case 3:
+                viewMoviesByCategory("drama");
+                break;
+            case 4:
+                viewMoviesByCategory("horror");
+                break;
+            case 5:
+                viewMoviesByCategory("scifi");
+                break;
+        }
+        return continueRunningApp;
+    }
+
+    private static void viewMoviesByCategory(String category) {
+        for (Movie movie : MoviesArray.findAll()) {
+            if (movie.getCategory().equalsIgnoreCase(category)) {
+                System.out.println(movie.getName() + " -- " + movie.getCategory());
+            }
+        }
+    }
+
+    private static String returnMenuDisplay() {
         System.out.println("What would you like to do?");
-        System.out.println("0 - exit\n" +
+        String choices = "0 - exit\n" +
                 "1 - view all movies\n" +
                 "2 - view movies in the animated category\n" +
                 "3 - view movies in the drama category\n" +
                 "4 - view movies in the horror category\n" +
-                "5 - view movies in the scifi category");
-
-        System.out.print("Enter your choice: ");
-        int userInput = sc.nextInt();
-
-        Movie[] movies = MoviesArray.findAll(); //that generate all the movies
-
-        if (userInput == 0) {
-            System.out.println("exit");
-        } else if (userInput == 1) {
-            for (Movie movie : movies)
-                System.out.println(movie.getName() + " -- " + movie.getCategory());
-        } else if (userInput == 2) {
-            for (Movie movie : movies)
-                if (movie.getCategory().equalsIgnoreCase("animated")) {
-                    System.out.println(movie.getName() + " -- " + movie.getCategory());
-                }
-        } else if (userInput == 3) {
-            for (Movie movie : movies)
-                if (movie.getCategory().equalsIgnoreCase("drama")) {
-                    System.out.println(movie.getName() + " -- " + movie.getCategory());
-                }
-        } else if (userInput == 4) {
-            for (Movie movie : movies)
-                if (movie.getCategory().equalsIgnoreCase("horror")) {
-                    System.out.println(movie.getName() + " -- " + movie.getCategory());
-                }
-        } else if (userInput == 5) {
-            for (Movie movie : movies)
-                if (movie.getCategory().equalsIgnoreCase("scifi")) {
-                    System.out.println(movie.getName() + " -- " + movie.getCategory());
-                }
-        }
-
+                "5 - view movies in the scifi category";
+        return choices;
     }
+
+    private static int promptUserForChoice() {
+        Input input = new Input();
+        System.out.print("Enter your choice: ");
+        int response = input.getInt(0, 5);
+        return response;
+    }
+
 }
