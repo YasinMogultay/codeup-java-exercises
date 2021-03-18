@@ -8,35 +8,50 @@ public class Student {
     private String studentName;
     private List<Integer> studentGrade;
 
-    public Student(String studentName, List<Integer> studentGrade) {
-        this.studentName = studentName;
-        this.studentGrade = studentGrade;
-    }
 
+    //constructor just for name
     public Student(String studentName) {
         this.studentName = studentName;
+        this.studentGrade = new ArrayList<>();
     }
 
-    public String getName(){
+    //constructor for both name and grade
+    public Student(String studentName, List<Integer> studentGrade) {
+        this.studentName = studentName;
+        this.studentGrade = new ArrayList<>();
+    }
+
+    public String getName() {
         return studentName;
     }
 
-    public void addGrade(int grade){
-        studentGrade.add(grade);
+    public void addGrade(int grade) {
+        this.studentGrade.add(grade);
     }
 
-    public double getGradeAverage(){
+    public double getGradeAverage() {
         int grade = studentGrade.stream().mapToInt(Integer::intValue).sum(); //https://stackoverflow.com/questions/5963847/is-there-possibility-of-sum-of-arraylist-without-looping/5963867
         int gradeSize = studentGrade.size();
         return grade / gradeSize;
     }
 
+    public String getGrades(){
+        StringBuilder str = new StringBuilder();
+        for (int grade : studentGrade){
+            str.append(grade + ",");
+        }
+        return str.toString();
+    }
+
     public static void main(String[] args) {
-        Student student = new Student("William", Collections.singletonList(10));
-        Student student1 = new Student("Yasin", Collections.singletonList(10));
-        Student student2 = new Student("Casey", Collections.singletonList(10));
-        System.out.println(student.getName());
-        System.out.println(student1.getGradeAverage());
+
+        Student student0 = new Student("William");
+        student0.addGrade(20);
+        student0.addGrade(20);
+        student0.addGrade(20);
+        System.out.println(student0.getGradeAverage());
+        Student student5 = new Student("yasin", Collections.singletonList(10));
+        student5.addGrade(10);
 
     }
 
