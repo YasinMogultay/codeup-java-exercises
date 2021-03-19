@@ -3,8 +3,10 @@ package grades;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Scanner;
 
 public class Student {
+
     private String studentName;
     private List<Integer> studentGrade;
 
@@ -29,19 +31,18 @@ public class Student {
         this.studentGrade.add(grade);
     }
 
+
     public double getGradeAverage() {
         int grade = studentGrade.stream().mapToInt(Integer::intValue).sum(); //https://stackoverflow.com/questions/5963847/is-there-possibility-of-sum-of-arraylist-without-looping/5963867
         int gradeSize = studentGrade.size();
         return grade / gradeSize;
     }
 
-    public String getGrades(){
-        StringBuilder str = new StringBuilder();
-        for (int grade : studentGrade){
-            str.append(grade + ",");
-        }
-        return str.toString();
+    //displaying all students grades
+    public List<Integer> getGrades() {
+        return this.studentGrade;
     }
+
 
     public static void main(String[] args) {
 
