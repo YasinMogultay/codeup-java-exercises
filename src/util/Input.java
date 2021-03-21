@@ -10,7 +10,6 @@ public class Input {
         this.scanner = new Scanner(System.in);
     }
 
-
     public String getString(){
         return scanner.nextLine();
     }
@@ -20,14 +19,24 @@ public class Input {
         return input.equalsIgnoreCase("y") || input.equalsIgnoreCase("yes");
     }
 
-    public int getInt(){
-        if (scanner.hasNextInt()){
-            return scanner.nextInt();
-        }else {
-            System.out.println("Invalid input, please enter an integer");
-            scanner.nextLine();
-            return getInt();
+    public int getInt() {
+        try {
+            return Integer.parseInt(getString());
+        } catch (NumberFormatException e){
+            System.out.println(e.getMessage());
+            System.out.println("Please enter a valid Integer");
         }
+        return getInt();
+    }
+
+    public int getBinary(){
+        try {
+            return Integer.valueOf(getString());
+        }catch (NumberFormatException e){
+            System.out.println(e.getMessage());
+            System.out.println("enter a valid number");
+        }
+        return getBinary();
     }
 
     public int getInt(int min , int max){
@@ -40,14 +49,15 @@ public class Input {
         }
     }
 
-    public double getDouble(){
-        if (scanner.hasNextDouble()){
-            return scanner.nextDouble();
-        }else {
-            System.out.println("Invalid input, please enter an integer");
-            scanner.nextLine();
-            return getDouble();
+    public double getDouble() throws NumberFormatException {
+        try {
+            return Double.parseDouble(getString());
+        }catch (NumberFormatException e){
+            System.out.println(e.getMessage());
+            System.out.println("Please enter a valid Double");
+
         }
+        return getDouble();
     }
 
     public double getDouble(double min , double max){
