@@ -1,6 +1,6 @@
 package prep.Foods;
 
-public abstract class Food implements Consumable {
+public abstract class Food implements Consumable { //abstract class is a class that can serve as a superclass
 
     private String name;
     private String description;

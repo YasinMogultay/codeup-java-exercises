@@ -6,10 +6,11 @@ public class Dinner extends Food {
 
     private boolean isSeasoned;
 
-    public Dinner(String name, String description, int calories, boolean isSeasoned) {
+    public Dinner(String name, String description, int calories,boolean isSeasoned) throws IllegalArgumentException {
         super(name, description, calories);
         this.isSeasoned = isSeasoned;
     }
+
 
     public boolean isSeasoned() {
         return isSeasoned;
@@ -24,9 +25,7 @@ public class Dinner extends Food {
         String nameString = super.getName();
         String descriptionString = super.getDescription();
         String caloriesString = super.getCalories() + "";
-        String isSeasonedString = isSeasoned()
-                ? "Seasoned"
-                : "Not Seasoned";
+        String isSeasonedString = isSeasoned() ? "Seasoned" : "Not Seasoned";
 
         ArrayList<String> list = new ArrayList<>();
 
