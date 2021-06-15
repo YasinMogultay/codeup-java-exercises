@@ -3,19 +3,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class test {
-    public static void swap(int x, int y) {
-        int temp = x;
-        x = y;
-        y = temp;
-        System.out.println("x1 = " + x);
-        System.out.println("y1 = " + y);
+    public static int findSum(int N) {
+
+        int result;
+        result = N + (N / 2) + (N / 4) + (N / 8) + (N / 16) + (N / 32);
+        return result;
     }
 
     public static void main(String[] args) {
-        int x = 10;
-        int y = 20;
-        swap(x,y);
-        System.out.println("x2 = " + x);
-        System.out.println("y2 = " + y);
+     findSum(-404);
     }
 }
