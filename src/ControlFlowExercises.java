@@ -46,12 +46,13 @@ public class ControlFlowExercises {
 //            System.out.println(i);
 //            i *= i;
 //        }while (i <= 100000);
-
+//
 //        for(long i = 2; i <= 100000; i*=i){
 //            System.out.println(i);
 //        }
 
         //**** Fizzbuzz TEST ****
+
 
 //        for (int i = 1; i <= 100; i++) {
 //            if (i % 3 == 0 & i % 5 == 0) {
